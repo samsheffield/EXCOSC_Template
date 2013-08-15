@@ -1,14 +1,14 @@
 /*
-	EXCOSC Game Jam Template
-	Author: Sam Sheffield (hello@samsheffield.com)
+EXCOSC Game Jam Template
+Author: Sam Sheffield (hello@samsheffield.com)
 
-	A simple template for the EXCOSC Game Jam to get you started with OSC. 
-	Simplicity and hackability was favored over brevity and elegance to make it easier for others to modify.
+A simple template for the EXCOSC Game Jam to get you started with OSC. 
+Simplicity and hackability was favored over brevity and elegance to make it easier for others to modify.
 
-	Requires oscP5 library for Processing to manage the OSC (http://www.sojamo.de/libraries/oscP5/)
+Requires oscP5 library for Processing to manage the OSC (http://www.sojamo.de/libraries/oscP5/)
 
-	NOTE: Commandline arguments still needs testing on Linux and Windows (It works on OS X like this: open gamename.app --args -lp 8888 -sp 9999 -sa 127.0.0.1)
-	Good luck!
+NOTE: Commandline arguments still needs testing on Linux and Windows (It works on OS X like this: open gamename.app --args -lp 8888 -sp 9999 -sa 127.0.0.1)
+Good luck!
 */
 
 import oscP5.*;
