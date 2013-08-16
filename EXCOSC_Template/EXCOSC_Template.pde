@@ -43,16 +43,24 @@ int listen_port, send_port;
 String send_address;
 
 void setup(){
-	// Look for commandline arguments, otherwise use defaults
-	if(args.length == 6){
-		listen_port	 = int(args[1]);	// -lp
-		send_port	 = int(args[3]);	// -sp
-		send_address = args[5];			// -sa
-	}
-	else {
-		listen_port  = 4444;
-		send_port 	 = 5555;
-		send_address = "127.0.0.1";
+	// Default ports for OSC
+	listen_port  = 4444;
+	send_port    = 5555;
+	send_address = "127.0.0.1";
+
+	for(int i=0; i<args.length; ++i){
+		if(args[i].equals("-lp")){
+			++i;
+			listen_port = int(args[i]);
+		}
+		else if(args[i].equals("-sa")){
+			++i;
+			send_address = args[i];
+		}
+		else if(args[i].equals("-sp")){
+			++i;
+			send_port = int(args[i]);
+		}
 	}
 
 	oscP5 = new OscP5(this, listen_port);
@@ -60,6 +68,8 @@ void setup(){
 }
 
 void draw(){
+
+	sendOsc("/player/position/x", map(mouseX, 0, width, 0, 1));
 	/*
 	//Usage examples:
 
